@@ -39,9 +39,9 @@ ENV/
 
 # Data
 # Keep structure but ignore processed files
-data/processed/*.csv
-data/processed/*.db
-data/processed/*.geojson
+# data/processed/*.csv
+# data/processed/*.db
+# data/processed/*.geojson
 
 # Outputs
 outputs/maps/*.html

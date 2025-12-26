@@ -1,0 +1,100 @@
+2025-12-26T11:58:45.97098745Z Downloading notebook_shim-0.2.4-py3-none-any.whl (13 kB)
+2025-12-26T11:58:45.987864347Z Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+2025-12-26T11:58:46.005050291Z Downloading prometheus_client-0.23.1-py3-none-any.whl (61 kB)
+2025-12-26T11:58:46.025396735Z Downloading python_json_logger-4.0.0-py3-none-any.whl (15 kB)
+2025-12-26T11:58:46.047699448Z Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+2025-12-26T11:58:46.066176335Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 41.9 MB/s eta 0:00:00
+2025-12-26T11:58:46.075822619Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-12-26T11:58:46.094171532Z Downloading charset_normalizer-3.4.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+2025-12-26T11:58:46.113010388Z Downloading urllib3-2.6.2-py3-none-any.whl (131 kB)
+2025-12-26T11:58:46.131505646Z Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)
+2025-12-26T11:58:46.151595133Z Downloading rfc3987_syntax-1.1.0-py3-none-any.whl (8.0 kB)
+2025-12-26T11:58:46.171670161Z Downloading lark-1.3.1-py3-none-any.whl (113 kB)
+2025-12-26T11:58:46.19459516Z Downloading Send2Trash-1.8.3-py3-none-any.whl (18 kB)
+2025-12-26T11:58:46.217371215Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-12-26T11:58:46.242337046Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 46.5 MB/s eta 0:00:00
+2025-12-26T11:58:46.253000395Z Downloading terminado-0.18.1-py3-none-any.whl (14 kB)
+2025-12-26T11:58:46.276510379Z Downloading webcolors-25.10.0-py3-none-any.whl (14 kB)
+2025-12-26T11:58:46.298267939Z Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+2025-12-26T11:58:46.318988023Z Downloading websocket_client-1.9.0-py3-none-any.whl (82 kB)
+2025-12-26T11:58:46.338722691Z Downloading argon2_cffi_bindings-25.1.0-cp39-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (87 kB)
+2025-12-26T11:58:46.358236854Z Downloading cffi-2.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+2025-12-26T11:58:46.378163268Z Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+2025-12-26T11:58:46.397405834Z Downloading soupsieve-2.8.1-py3-none-any.whl (36 kB)
+2025-12-26T11:58:46.415957272Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+2025-12-26T11:58:46.433645329Z Downloading fqdn-1.5.1-py3-none-any.whl (9.1 kB)
+2025-12-26T11:58:46.456418575Z Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)
+2025-12-26T11:58:46.48829966Z Downloading arrow-1.4.0-py3-none-any.whl (68 kB)
+2025-12-26T11:58:46.504628073Z Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+2025-12-26T11:58:46.524688039Z Downloading notebook-7.5.1-py3-none-any.whl (14.5 MB)
+2025-12-26T11:58:46.606779274Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.5/14.5 MB 180.2 MB/s eta 0:00:00
+2025-12-26T11:58:46.617068263Z Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+2025-12-26T11:58:46.631777585Z Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+2025-12-26T11:58:46.648063046Z Downloading retrying-1.4.2-py3-none-any.whl (10 kB)
+2025-12-26T11:58:46.662423669Z Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+2025-12-26T11:58:46.676333501Z Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)
+2025-12-26T11:58:46.690978491Z Downloading wcwidth-0.2.14-py2.py3-none-any.whl (37 kB)
+2025-12-26T11:58:46.705304553Z Downloading xyzservices-2025.11.0-py3-none-any.whl (93 kB)
+2025-12-26T11:58:47.427314364Z Installing collected packages: webencodings, pytz, pure-eval, ptyprocess, fastjsonschema, zipp, xyzservices, xlrd, widgetsnbextension, websocket-client, webcolors, wcwidth, urllib3, uri-template, tzdata, typing_extensions, traitlets, tqdm, tornado, tinycss2, threadpoolctl, soupsieve, six, setuptools, send2trash, rpds-py, rfc3986-validator, retrying, pyzmq, pyyaml, python-json-logger, python-dotenv, pyparsing, pygments, pycparser, psutil, prometheus-client, pluggy, platformdirs, pillow, pexpect, parso, pandocfilters, packaging, numpy, nest-asyncio, narwhals, mistune, markupsafe, lark, kiwisolver, jupyterlab_widgets, jupyterlab-pygments, jsonpointer, json5, joblib, itsdangerous, iniconfig, idna, h11, greenlet, fqdn, fonttools, executing, et-xmlfile, defusedxml, decorator, debugpy, cycler, coverage, comm, click, charset_normalizer, certifi, blinker, bleach, babel, attrs, async-lru, asttokens, Werkzeug, terminado, stack_data, sqlalchemy, shapely, scipy, rfc3987-syntax, rfc3339-validator, requests, referencing, python-dateutil, pytest, pyproj, pyogrio, prompt_toolkit, plotly, patsy, openpyxl, matplotlib-inline, jupyter-core, jinja2, jedi, ipython-pygments-lexers, importlib-metadata, httpcore, gunicorn, contourpy, cffi, beautifulsoup4, anyio, scikit-learn, pytest-cov, pandas, matplotlib, jupyter-server-terminals, jupyter-client, jsonschema-specifications, ipython, httpx, Flask, branca, arrow, argon2-cffi-bindings, statsmodels, seaborn, jsonschema, isoduration, ipywidgets, ipykernel, geopandas, folium, dash, argon2-cffi, nbformat, jupyter-console, dash-bootstrap-components, nbclient, jupyter-events, nbconvert, jupyter-server, notebook-shim, jupyterlab-server, jupyter-lsp, jupyterlab, notebook, jupyter
+2025-12-26T11:59:32.249376682Z 
+2025-12-26T11:59:32.262810171Z Successfully installed Flask-3.1.2 Werkzeug-3.1.4 anyio-4.12.0 argon2-cffi-25.1.0 argon2-cffi-bindings-25.1.0 arrow-1.4.0 asttokens-3.0.1 async-lru-2.0.5 attrs-25.4.0 babel-2.17.0 beautifulsoup4-4.14.3 bleach-6.3.0 blinker-1.9.0 branca-0.8.2 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 comm-0.2.3 contourpy-1.3.3 coverage-7.13.0 cycler-0.12.1 dash-3.3.0 dash-bootstrap-components-2.0.4 debugpy-1.8.19 decorator-5.2.1 defusedxml-0.7.1 et-xmlfile-2.0.0 executing-2.2.1 fastjsonschema-2.21.2 folium-0.20.0 fonttools-4.61.1 fqdn-1.5.1 geopandas-1.1.2 greenlet-3.3.0 gunicorn-23.0.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 importlib-metadata-8.7.1 iniconfig-2.3.0 ipykernel-7.1.0 ipython-9.8.0 ipython-pygments-lexers-1.1.1 ipywidgets-8.1.8 isoduration-20.11.0 itsdangerous-2.2.0 jedi-0.19.2 jinja2-3.1.6 joblib-1.5.3 json5-0.12.1 jsonpointer-3.0.0 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 jupyter-1.1.1 jupyter-client-8.7.0 jupyter-console-6.6.3 jupyter-core-5.9.1 jupyter-events-0.12.0 jupyter-lsp-2.3.0 jupyter-server-2.17.0 jupyter-server-terminals-0.5.3 jupyterlab-4.5.1 jupyterlab-pygments-0.3.0 jupyterlab-server-2.28.0 jupyterlab_widgets-3.0.16 kiwisolver-1.4.9 lark-1.3.1 markupsafe-3.0.3 matplotlib-3.10.8 matplotlib-inline-0.2.1 mistune-3.2.0 narwhals-2.14.0 nbclient-0.10.4 nbconvert-7.16.6 nbformat-5.10.4 nest-asyncio-1.6.0 notebook-7.5.1 notebook-shim-0.2.4 numpy-2.4.0 openpyxl-3.1.5 packaging-25.0 pandas-2.3.3 pandocfilters-1.5.1 parso-0.8.5 patsy-1.0.2 pexpect-4.9.0 pillow-12.0.0 platformdirs-4.5.1 plotly-6.5.0 pluggy-1.6.0 prometheus-client-0.23.1 prompt_toolkit-3.0.52 psutil-7.2.0 ptyprocess-0.7.0 pure-eval-0.2.3 pycparser-2.23 pygments-2.19.2 pyogrio-0.12.1 pyparsing-3.3.1 pyproj-3.7.2 pytest-9.0.2 pytest-cov-7.0.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.1 python-json-logger-4.0.0 pytz-2025.2 pyyaml-6.0.3 pyzmq-27.1.0 referencing-0.37.0 requests-2.32.5 retrying-1.4.2 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rfc3987-syntax-1.1.0 rpds-py-0.30.0 scikit-learn-1.8.0 scipy-1.16.3 seaborn-0.13.2 send2trash-1.8.3 setuptools-80.9.0 shapely-2.1.2 six-1.17.0 soupsieve-2.8.1 sqlalchemy-2.0.45 stack_data-0.6.3 statsmodels-0.14.6 terminado-0.18.1 threadpoolctl-3.6.0 tinycss2-1.4.0 tornado-6.5.4 tqdm-4.67.1 traitlets-5.14.3 typing_extensions-4.15.0 tzdata-2025.3 uri-template-1.3.0 urllib3-2.6.2 wcwidth-0.2.14 webcolors-25.10.0 webencodings-0.5.1 websocket-client-1.9.0 widgetsnbextension-4.0.15 xlrd-2.0.2 xyzservices-2025.11.0 zipp-3.23.0
+2025-12-26T11:59:32.377317694Z 
+2025-12-26T11:59:32.377346635Z [notice] A new release of pip is available: 25.1.1 -> 25.3
+2025-12-26T11:59:32.377350655Z [notice] To update, run: pip install --upgrade pip
+2025-12-26T11:59:34.154731313Z ==> Requesting Node.js version >=20.0.0
+2025-12-26T11:59:34.431420854Z ==> Using Node.js version 25.2.1 via ./.venv/share/jupyter/lab/static/package.json
+2025-12-26T11:59:34.456714673Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-12-26T11:59:42.323651734Z ==> Uploading build...
+2025-12-26T12:00:13.875889315Z ==> Uploaded in 17.8s. Compression took 13.8s
+2025-12-26T12:00:14.03161903Z ==> Build successful 🎉
+2025-12-26T12:00:19.794498585Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2025-12-26T12:00:19.812066965Z ==> Deploying...
+2025-12-26T12:02:23.722189634Z ==> Running 'gunicorn app:server --bind 0.0.0.0:$PORT --workers 2 --timeout 120'
+2025-12-26T12:02:38.721082531Z ==> No open ports detected, continuing to scan...
+2025-12-26T12:02:38.811513041Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-12-26T12:02:56.009682512Z /opt/render/project/src/app.py:45: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+2025-12-26T12:02:56.009718714Z 
+2025-12-26T12:02:56.009726524Z   dissolved['centroid'] = dissolved.geometry.centroid
+2025-12-26T12:02:56.217102903Z Cargando datos...
+2025-12-26T12:02:56.217124475Z Datos cargados: 14 seccionales, 420 registros
+2025-12-26T12:02:56.217641274Z Traceback (most recent call last):
+2025-12-26T12:02:56.217831815Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/util.py", line 413, in import_app
+2025-12-26T12:02:56.217839266Z     app = getattr(mod, name)
+2025-12-26T12:02:56.217842956Z AttributeError: module 'app' has no attribute 'server'
+2025-12-26T12:02:56.21790621Z 
+2025-12-26T12:02:56.21791346Z During handling of the above exception, another exception occurred:
+2025-12-26T12:02:56.21791815Z 
+2025-12-26T12:02:56.217922971Z Traceback (most recent call last):
+2025-12-26T12:02:56.218762779Z   File "/opt/render/project/src/.venv/bin/gunicorn", line 8, in <module>
+2025-12-26T12:02:56.218771009Z     sys.exit(run())
+2025-12-26T12:02:56.21877461Z              ~~~^^
+2025-12-26T12:02:56.21877869Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+2025-12-26T12:02:56.21878623Z     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+2025-12-26T12:02:56.218792051Z     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2025-12-26T12:02:56.218797791Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 235, in run
+2025-12-26T12:02:56.218803361Z     super().run()
+2025-12-26T12:02:56.218809121Z     ~~~~~~~~~~~^^
+2025-12-26T12:02:56.218815422Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 71, in run
+2025-12-26T12:02:56.218821642Z     Arbiter(self).run()
+2025-12-26T12:02:56.218827293Z     ~~~~~~~^^^^^^
+2025-12-26T12:02:56.218832823Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/arbiter.py", line 57, in __init__
+2025-12-26T12:02:56.218838893Z     self.setup(app)
+2025-12-26T12:02:56.218843114Z     ~~~~~~~~~~^^^^^
+2025-12-26T12:02:56.218846634Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/arbiter.py", line 117, in setup
+2025-12-26T12:02:56.218850144Z     self.app.wsgi()
+2025-12-26T12:02:56.218853574Z     ~~~~~~~~~~~~~^^
+2025-12-26T12:02:56.218857054Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-12-26T12:02:56.218861124Z     self.callable = self.load()
+2025-12-26T12:02:56.218864565Z                     ~~~~~~~~~^^
+2025-12-26T12:02:56.218868395Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-12-26T12:02:56.218872215Z     return self.load_wsgiapp()
+2025-12-26T12:02:56.218875816Z            ~~~~~~~~~~~~~~~~~^^
+2025-12-26T12:02:56.218879946Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-12-26T12:02:56.218884186Z     return util.import_app(self.app_uri)
+2025-12-26T12:02:56.218887726Z            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2025-12-26T12:02:56.218891416Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/util.py", line 417, in import_app
+2025-12-26T12:02:56.218894966Z     raise AppImportError("Failed to find attribute %r in %r." % (name, module))
+2025-12-26T12:02:56.218923818Z gunicorn.errors.AppImportError: Failed to find attribute 'server' in 'app'.
+2025-12-26T12:03:00.414395044Z ==> Exited with status 1
+2025-12-26T12:03:00.430994574Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+2025-12-26T12:03:06.700566558Z ==> Running 'gunicorn app:server --bind 0.0.0.0:$PORT --workers 2 --timeout 120'
