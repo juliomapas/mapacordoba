@@ -135,19 +135,21 @@ def create_folium_map(selected_year):
         highlight_function=highlight_function,
         tooltip=folium.GeoJsonTooltip(
             fields=['Seccional', 'agrupacion', 'votos', 'porcentaje'],
-            aliases=['Seccional:', 'Ganador:', 'Votos:', 'Porcentaje:'],
+            aliases=['Sec:', 'Ganador:', 'Votos:', '%:'],
             style="""
                 background-color: white;
                 color: #333333;
                 font-family: Arial, sans-serif;
-                font-size: 14px;
-                font-weight: bold;
-                padding: 10px;
-                border: 2px solid #2E86AB;
+                font-size: 11px;
+                font-weight: normal;
+                padding: 6px 8px;
+                border: 1.5px solid #2E86AB;
                 border-radius: 4px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                max-width: 180px;
+                line-height: 1.3;
             """,
-            sticky=False
+            sticky=True
         )
     )
     geojson.add_to(m)
@@ -178,7 +180,7 @@ app = dash.Dash(
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     suppress_callback_exceptions=True
 )
-server = app.server
+
 app.title = "Dashboard Electoral Córdoba"
 
 # ============================================================================
@@ -190,7 +192,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.H1("Dashboard Electoral Córdoba Capital", className="text-center mt-4 mb-2"),
-            html.H2("Evolución 2021 - 2023 - 2025", className="text-center text-muted mb-4")
+            html.H2("Evolución voto DIPUTADOS año 2021 - 2023 - 2025", className="text-center text-muted mb-4")
         ])
     ]),
 
@@ -226,15 +228,18 @@ app.layout = dbc.Container([
                     html.H6("Año Seleccionado", className="card-subtitle text-muted mb-1", style={'fontSize': '12px'}),
                     html.H5(id="metric-year", className="card-title mb-0", style={'fontSize': '20px'})
                 ])
-            ], className="mb-3")
+            ], className="mb-2")
         ], xs=12, sm=6, md=3)
-    ]),
+    ], className="metrics-row"),
 
     # Mapa principal
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H3("Mapa Electoral por Seccional")),
+                dbc.CardHeader(
+                    html.H3("Mapa Electoral por Seccional"),
+                    className="card-header-custom"
+                ),
                 dbc.CardBody([
                     dbc.Row([
                         dbc.Col([
@@ -268,7 +273,8 @@ app.layout = dbc.Container([
                     html.Iframe(
                         id="electoral-map",
                         srcDoc='',
-                        style={"height": "60vh", "width": "100%", "border": "none"}
+                        style={"height": "60vh", "width": "100%", "border": "none"},
+                        className="responsive-map"
                     )
                 ])
             ])
@@ -277,7 +283,7 @@ app.layout = dbc.Container([
         # Panel lateral con gráficos
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H4(id="pie-chart-title")),
+                dbc.CardHeader(html.H4(id="pie-chart-title"), className="card-header-custom"),
                 dbc.CardBody([
                     dcc.Graph(
                         id="pie-chart",
@@ -287,7 +293,7 @@ app.layout = dbc.Container([
                 ])
             ], className="mb-3"),
             dbc.Card([
-                dbc.CardHeader(html.H4(id="bar-chart-title")),
+                dbc.CardHeader(html.H4(id="bar-chart-title"), className="card-header-custom"),
                 dbc.CardBody([
                     dcc.Graph(
                         id="bar-chart",
@@ -297,19 +303,19 @@ app.layout = dbc.Container([
                 ])
             ])
         ], xs=12, md=4, lg=4)
-    ], className="mb-4"),
+    ], className="mb-3 map-section"),
 
     # Tabla comparativa
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H3("Comparativa por Seccional")),
+                dbc.CardHeader(html.H3("Comparativa por Seccional"), className="card-header-custom"),
                 dbc.CardBody([
                     html.Div(id="comparison-table")
                 ])
             ])
         ])
-    ], className="mb-4"),
+    ], className="mb-2"),
 
     # Footer
     dbc.Row([
@@ -352,6 +358,55 @@ def update_map_and_metrics(selected_year, selected_seccional):
     # Generar mapa Folium
     folium_map = create_folium_map(selected_year)
     map_html = folium_map._repr_html_()
+    
+    # Inyectar CSS personalizado directamente en el iframe del mapa
+    # Esto soluciona los problemas de estilo en móviles que no se arreglan desde el padre
+    custom_map_css = """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .leaflet-tooltip {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border: 1px solid #e0e0e0 !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+            border-radius: 8px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: normal !important;
+            color: #333 !important;
+            padding: 8px 12px !important;
+        }
+        
+        /* Estilos específicos para móviles */
+        @media (max-width: 600px) {
+            .leaflet-tooltip {
+                font-size: 10px !important;
+                padding: 6px 10px !important;
+                max-width: 140px !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+                border-width: 1px !important;
+                margin-top: -20px !important; /* Ajustar posición si es necesario */
+            }
+            
+            /* Reducir tamaño de las etiquetas de marcadores en móvil */
+            .leaflet-div-icon div {
+                font-size: 9px !important;
+            }
+        }
+    </style>
+    """
+    
+    # Insertar estilos en el head del HTML generado
+    if '</head>' in map_html:
+        map_html = map_html.replace('</head>', f'{custom_map_css}</head>')
+    else:
+        # Fallback si no encuentra head (raro en output de folium)
+        map_html = f"{custom_map_css}{map_html}"
 
     # Filtrar por seccional si no es "all"
     if selected_seccional and selected_seccional != 'all':
@@ -386,13 +441,20 @@ def update_map_and_metrics(selected_year, selected_seccional):
         names='agrupacion',
         color='agrupacion',
         color_discrete_map=PARTY_COLORS,
-        hole=0.4
+        hole=0.6  # Donut chart más elegante
     )
-    fig_pie.update_traces(textposition='inside', textinfo='percent+label')
+    fig_pie.update_traces(
+        textposition='inside', 
+        textinfo='percent',
+        hovertemplate='<b>%{label}</b><br>Votos: %{value}<br>Porcentaje: %{percent}'
+    )
     fig_pie.update_layout(
-        margin=dict(l=0, r=0, t=0, b=0),
+        margin=dict(l=20, r=20, t=0, b=20),
         showlegend=False,
-        font=dict(size=10)
+        font=dict(family="Inter, sans-serif", size=11),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        annotations=[dict(text=f"Total<br>{df_year_filtered['votos'].sum():,.0f}", x=0.5, y=0.5, font_size=12, showarrow=False)]
     )
 
     # Bar chart (usando datos filtrados)
@@ -402,15 +464,30 @@ def update_map_and_metrics(selected_year, selected_seccional):
         y='agrupacion',
         orientation='h',
         color='agrupacion',
-        color_discrete_map=PARTY_COLORS
+        color_discrete_map=PARTY_COLORS,
+        text='votos'
+    )
+    fig_bar.update_traces(
+        texttemplate='%{text:.2s}', 
+        textposition='outside',
+        marker_line_width=0,
+        opacity=0.9
     )
     fig_bar.update_layout(
-        margin=dict(l=0, r=0, t=0, b=0),
+        margin=dict(l=0, r=20, t=0, b=0),
         showlegend=False,
         yaxis_title=None,
-        xaxis_title="Votos",
-        font=dict(size=10)
+        xaxis_title=None,
+        xaxis=dict(showgrid=False, showticklabels=False), # Limpiar eje X
+        yaxis=dict(showgrid=False, tickfont=dict(size=10)),
+        font=dict(family="Inter, sans-serif", size=11),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        uniformtext_minsize=8, 
+        uniformtext_mode='hide'
     )
+    
+    # Ordenar barras
     fig_bar.update_yaxes(categoryorder='total ascending')
 
     return (
@@ -471,12 +548,19 @@ def update_comparison_table(selected_year):
 # RUN SERVER
 # ============================================================================
 
+# Exponer server para gunicorn
+server = app.server
+
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 8050))
+    debug = os.environ.get('DEBUG', 'False').lower() == 'true'
+    
     print("\n" + "="*70)
     print("DASHBOARD ELECTORAL - SERVIDOR INICIADO")
     print("="*70)
-    print("\nAbre tu navegador en: http://127.0.0.1:8050/")
+    print(f"\nAbre tu navegador en: http://0.0.0.0:{port}/")
     print("\nPresiona Ctrl+C para detener el servidor")
     print("="*70 + "\n")
 
-    app.run(debug=True, host='127.0.0.1', port=8050)
+    app.run(debug=debug, host='0.0.0.0', port=port)

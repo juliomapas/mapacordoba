@@ -192,7 +192,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.H1("Dashboard Electoral Córdoba Capital", className="text-center mt-4 mb-2"),
-            html.H2("Evolución 2021 - 2023 - 2025", className="text-center text-muted mb-4")
+            html.H2("Evolución 2021 - 2023 - 2025 (Actualizado)", className="text-center text-muted mb-4")
         ])
     ]),
 
@@ -238,10 +238,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardHeader(
                     html.H3("Mapa Electoral por Seccional"),
-                    style={
-                        'background': 'linear-gradient(135deg, #B8D4E3 0%, #A8C8DC 100%)',
-                        'color': '#2c3e50'
-                    }
+                    className="card-header-custom"
                 ),
                 dbc.CardBody([
                     dbc.Row([
@@ -286,7 +283,7 @@ app.layout = dbc.Container([
         # Panel lateral con gráficos
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H4(id="pie-chart-title")),
+                dbc.CardHeader(html.H4(id="pie-chart-title"), className="card-header-custom"),
                 dbc.CardBody([
                     dcc.Graph(
                         id="pie-chart",
@@ -296,7 +293,7 @@ app.layout = dbc.Container([
                 ])
             ], className="mb-3"),
             dbc.Card([
-                dbc.CardHeader(html.H4(id="bar-chart-title")),
+                dbc.CardHeader(html.H4(id="bar-chart-title"), className="card-header-custom"),
                 dbc.CardBody([
                     dcc.Graph(
                         id="bar-chart",
@@ -312,7 +309,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H3("Comparativa por Seccional")),
+                dbc.CardHeader(html.H3("Comparativa por Seccional"), className="card-header-custom"),
                 dbc.CardBody([
                     html.Div(id="comparison-table")
                 ])

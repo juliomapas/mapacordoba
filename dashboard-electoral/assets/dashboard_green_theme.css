@@ -9,16 +9,21 @@
     --primary-color: #2E86AB;
     --primary-dark: #1a5276;
     --primary-light: #e3f2fd;
+    --pastel-green: #D4EDDA;
+    /* Verde pastel suave */
+    --pastel-green-dark: #C3E6CB;
     --secondary-color: #F4A261;
     --text-color: #2c3e50;
     --text-muted: #6c757d;
     --background-color: #f8f9fa;
     --card-bg: #ffffff;
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-    --radius-sm: 8px;
-    --radius-md: 12px;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 6px 15px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --radius-sm: 12px;
+    /* Más suave */
+    --radius-md: 20px;
+    /* Bordes mucho más suaves */
 }
 
 body {
@@ -28,9 +33,14 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600 !important;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 h1 {
@@ -62,8 +72,13 @@ h1 {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* --- METRIC CARDS --- */
@@ -127,16 +142,22 @@ h1 {
 }
 
 /* --- MAPA Y CONTENEDORES --- */
-.card-header {
-    background: transparent !important;
-    border-bottom: 1px solid #edf2f7 !important;
+.card-header,
+.card-header-custom {
+    background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-green-dark) 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     padding: 1rem 1.5rem !important;
+    border-top-left-radius: var(--radius-md) !important;
+    border-top-right-radius: var(--radius-md) !important;
 }
 
-.card-header h3, .card-header h4 {
+.card-header h3,
+.card-header h4,
+.card-header-custom h3 {
     margin: 0;
     font-size: 1.1rem;
-    color: var(--primary-dark);
+    color: var(--text-color);
+    /* Color oscuro para contraste en verde pastel */
     font-weight: 700;
 }
 
@@ -154,7 +175,7 @@ h1 {
 
 #electoral-map {
     border-radius: var(--radius-sm);
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
 }
 
 /* --- TABLAS --- */
@@ -170,10 +191,11 @@ h1 {
 }
 
 .comparison-table thead th {
-    background-color: #f1f5f9;
+    background-color: var(--pastel-green-dark);
+    /* Verde en encabezados de tabla */
     color: var(--text-color);
-    font-weight: 600;
-    border-bottom: 2px solid #e2e8f0;
+    font-weight: 700;
+    border-bottom: 2px solid #b1dfbb;
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
@@ -192,7 +214,7 @@ h1 {
 }
 
 .comparison-table tbody tr:hover {
-    background-color: #f8fafc;
+    background-color: #f1f8fb;
 }
 
 /* --- MOBILE OPTIMIZATIONS --- */
@@ -200,27 +222,35 @@ h1 {
     .container-fluid {
         padding: 10px;
     }
-    
-    h1 { font-size: 1.5rem !important; margin-top: 10px !important; }
-    h2 { font-size: 1rem !important; margin-bottom: 20px !important; }
-    
+
+    h1 {
+        font-size: 1.5rem !important;
+        margin-top: 10px !important;
+    }
+
+    h2 {
+        font-size: 1rem !important;
+        margin-bottom: 20px !important;
+    }
+
     .metrics-row .card {
         margin-bottom: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        /* Sombra un poco más visible en móvil */
     }
-    
+
     .metrics-row .card-body {
         padding: 1rem;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     .metrics-row h6 {
         margin-bottom: 0 !important;
         margin-right: 10px;
     }
-    
+
     .metrics-row h5 {
         font-size: 1.1rem !important;
     }
@@ -229,22 +259,25 @@ h1 {
         height: 50vh !important;
         min-height: 300px;
     }
-    
-    .card-header {
+
+    .card-header,
+    .card-header-custom {
         padding: 0.75rem 1rem !important;
+        /* Header más compacto en móvil */
     }
 }
 
 @media (max-width: 480px) {
     #electoral-map {
-        height: 60vh !important; /* Más altura para el mapa en móvil */
+        height: 60vh !important;
+        /* Más altura para el mapa en móvil */
     }
-    
-    .map-section .col-md-8, 
+
+    .map-section .col-md-8,
     .map-section .col-md-4 {
         padding: 0 5px;
     }
-    
+
     .metric-value {
         font-size: 1rem;
     }
