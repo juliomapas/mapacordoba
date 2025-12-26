@@ -181,7 +181,28 @@ app = dash.Dash(
     suppress_callback_exceptions=True
 )
 
-app.title = "Dashboard Electoral Córdoba"
+app.title = "Dashboard Electoral Cordoba"  # Refresco de archivo
+
+# HTML base personalizado para forzar el favicon y evitar caché
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=2">
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 
 # ============================================================================
 # LAYOUT
@@ -309,7 +330,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H3("Comparativa por Seccional"), className="card-header-custom"),
+                dbc.CardHeader(html.H3("¿Quién ganó en las Seccionales?"), className="card-header-custom"),
                 dbc.CardBody([
                     html.Div(id="comparison-table")
                 ])
