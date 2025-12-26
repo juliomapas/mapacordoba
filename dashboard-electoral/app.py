@@ -360,7 +360,56 @@ def update_map_and_metrics(selected_year, selected_seccional):
 
     # Generar mapa Folium
     folium_map = create_folium_map(selected_year)
-    map_html = folium_map._repr_html_()
+    map_html = folium_map.get_root().render()
+    
+    # Inyectar CSS personalizado directamente en el iframe del mapa
+    # Esto soluciona los problemas de estilo en móviles que no se arreglan desde el padre
+    custom_map_css = """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .leaflet-tooltip {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border: 1px solid #e0e0e0 !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+            border-radius: 8px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: normal !important;
+            color: #333 !important;
+            padding: 8px 12px !important;
+        }
+        
+        /* Estilos específicos para móviles */
+        @media (max-width: 600px) {
+            .leaflet-tooltip {
+                font-size: 10px !important;
+                padding: 6px 10px !important;
+                max-width: 140px !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+                border-width: 1px !important;
+                margin-top: -20px !important; /* Ajustar posición si es necesario */
+            }
+            
+            /* Reducir tamaño de las etiquetas de marcadores en móvil */
+            .leaflet-div-icon div {
+                font-size: 9px !important;
+            }
+        }
+    </style>
+    """
+    
+    # Insertar estilos en el head del HTML generado
+    if '</head>' in map_html:
+        map_html = map_html.replace('</head>', f'{custom_map_css}</head>')
+    else:
+        # Fallback si no encuentra head (raro en output de folium)
+        map_html = f"{custom_map_css}{map_html}"
 
     # Filtrar por seccional si no es "all"
     if selected_seccional and selected_seccional != 'all':
@@ -395,13 +444,20 @@ def update_map_and_metrics(selected_year, selected_seccional):
         names='agrupacion',
         color='agrupacion',
         color_discrete_map=PARTY_COLORS,
-        hole=0.4
+        hole=0.6  # Donut chart más elegante
     )
-    fig_pie.update_traces(textposition='inside', textinfo='percent+label')
+    fig_pie.update_traces(
+        textposition='inside', 
+        textinfo='percent',
+        hovertemplate='<b>%{label}</b><br>Votos: %{value}<br>Porcentaje: %{percent}'
+    )
     fig_pie.update_layout(
-        margin=dict(l=0, r=0, t=0, b=0),
+        margin=dict(l=20, r=20, t=0, b=20),
         showlegend=False,
-        font=dict(size=10)
+        font=dict(family="Inter, sans-serif", size=11),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        annotations=[dict(text=f"Total<br>{df_year_filtered['votos'].sum():,.0f}", x=0.5, y=0.5, font_size=12, showarrow=False)]
     )
 
     # Bar chart (usando datos filtrados)
@@ -411,15 +467,30 @@ def update_map_and_metrics(selected_year, selected_seccional):
         y='agrupacion',
         orientation='h',
         color='agrupacion',
-        color_discrete_map=PARTY_COLORS
+        color_discrete_map=PARTY_COLORS,
+        text='votos'
+    )
+    fig_bar.update_traces(
+        texttemplate='%{text:.2s}', 
+        textposition='outside',
+        marker_line_width=0,
+        opacity=0.9
     )
     fig_bar.update_layout(
-        margin=dict(l=0, r=0, t=0, b=0),
+        margin=dict(l=0, r=20, t=0, b=0),
         showlegend=False,
         yaxis_title=None,
-        xaxis_title="Votos",
-        font=dict(size=10)
+        xaxis_title=None,
+        xaxis=dict(showgrid=False, showticklabels=False), # Limpiar eje X
+        yaxis=dict(showgrid=False, tickfont=dict(size=10)),
+        font=dict(family="Inter, sans-serif", size=11),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        uniformtext_minsize=8, 
+        uniformtext_mode='hide'
     )
+    
+    # Ordenar barras
     fig_bar.update_yaxes(categoryorder='total ascending')
 
     return (

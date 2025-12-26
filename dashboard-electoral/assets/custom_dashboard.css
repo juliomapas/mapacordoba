@@ -1,7 +1,41 @@
 /* ============================================================================
-   DASHBOARD ELECTORAL - ESTILOS MEJORADOS
-   Responsividad y Usabilidad
+   DASHBOARD ELECTORAL - ESTILOS PREMIUM
+   Diseño limpio, moderno y responsivo
    ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2E86AB;
+    --primary-dark: #1a5276;
+    --primary-light: #e3f2fd;
+    --secondary-color: #F4A261;
+    --text-color: #2c3e50;
+    --text-muted: #6c757d;
+    --background-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600 !important;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    color: var(--primary-dark);
+}
 
 /* --- LOADING SPINNER --- */
 .loading-overlay {
@@ -10,7 +44,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,12 +53,12 @@
 }
 
 .spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #2E86AB;
+    border: 3px solid rgba(46, 134, 171, 0.1);
+    border-top: 3px solid var(--primary-color);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -31,126 +66,103 @@
     100% { transform: rotate(360deg); }
 }
 
-/* --- RESPONSIVE TYPOGRAPHY --- */
-@media (max-width: 576px) {
-    h1 { font-size: 1.5rem !important; }
-    h2 { font-size: 1.2rem !important; }
-    h3 { font-size: 1.1rem !important; }
-    h4 { font-size: 1rem !important; }
-}
-
-/* --- METRIC CARDS MEJORADAS --- */
+/* --- METRIC CARDS --- */
 .metric-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none !important;
     cursor: default;
+    background: var(--card-bg);
 }
 
 .metric-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md) !important;
 }
 
-.metric-value {
-    font-weight: bold;
-    color: #2E86AB;
+.metrics-row .card {
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    height: 100%;
 }
 
-/* --- TOOLTIPS PERSONALIZADOS --- */
-.info-icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: #2E86AB;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 11px;
-    line-height: 16px;
-    margin-left: 5px;
-    cursor: help;
+.metrics-row .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.info-icon:hover {
-    background: #1a5276;
-}
-
-/* --- CONTROLES MEJORADOS --- */
+/* --- CONTROLES Y SLIDERS --- */
 .control-section {
-    background: #f8f9fa;
+    background: var(--card-bg);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     margin-bottom: 15px;
+    border: 1px solid #edf2f7;
 }
 
 .rc-slider-handle {
-    border-color: #2E86AB !important;
+    border-color: var(--primary-color) !important;
+    background-color: white !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 0 2px rgba(46, 134, 171, 0.2);
 }
 
 .rc-slider-handle:hover,
 .rc-slider-handle:focus,
 .rc-slider-handle:active {
-    border-color: #1a5276 !important;
-    box-shadow: 0 0 5px #2E86AB !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 0 0 4px rgba(46, 134, 171, 0.3) !important;
+    transform: scale(1.1);
 }
 
 .rc-slider-track {
-    background-color: #2E86AB !important;
+    background-color: var(--primary-color) !important;
 }
 
-/* --- DROPDOWN MEJORADO --- */
-.Select-control {
-    border-radius: 6px !important;
-    border: 2px solid #dee2e6 !important;
-    transition: border-color 0.2s ease;
+.rc-slider-rail {
+    background-color: #e9ecef !important;
 }
 
-.Select-control:hover {
-    border-color: #2E86AB !important;
+/* --- MAPA Y CONTENEDORES --- */
+.card-header {
+    background: transparent !important;
+    border-bottom: 1px solid #edf2f7 !important;
+    padding: 1rem 1.5rem !important;
 }
 
-.Select-control:focus-within {
-    border-color: #2E86AB !important;
-    box-shadow: 0 0 0 0.2rem rgba(46, 134, 171, 0.25) !important;
+.card-header h3, .card-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    font-weight: 700;
 }
 
-/* --- MAPA RESPONSIVE --- */
-.map-container {
-    position: relative;
-    min-height: 400px;
+.card {
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-sm);
+    background: var(--card-bg);
+    transition: box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .map-container {
-        min-height: 300px;
-    }
-}
-
-@media (max-width: 576px) {
-    .map-container {
-        min-height: 250px;
-    }
+.card:hover {
+    box-shadow: var(--shadow-md);
 }
 
 #electoral-map {
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
 }
 
-/* --- GRAFICOS RESPONSIVE --- */
-.chart-container {
-    min-height: 200px;
-}
-
-@media (max-width: 768px) {
-    .chart-container {
-        min-height: 250px !important;
-        margin-bottom: 20px;
-    }
-}
-
-/* --- TABLA RESPONSIVE MEJORADA --- */
+/* --- TABLAS --- */
 .table-responsive {
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #edf2f7;
 }
 
 .comparison-table {
@@ -158,210 +170,97 @@
 }
 
 .comparison-table thead th {
-    background-color: #2E86AB;
-    color: white;
+    background-color: #f1f5f9;
+    color: var(--text-color);
     font-weight: 600;
-    text-align: center;
-    vertical-align: middle;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 12px;
 }
 
 .comparison-table tbody td {
     vertical-align: middle;
-    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .comparison-table tbody tr:hover {
-    background-color: #f1f8fb;
-    cursor: default;
-}
-
-/* --- COLLAPSE BUTTON --- */
-.collapse-button {
-    background: none;
-    border: none;
-    color: #2E86AB;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.2s ease;
-}
-
-.collapse-button:hover {
-    color: #1a5276;
-    text-decoration: underline;
-}
-
-.collapse-icon {
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-
-.collapse-icon.rotated {
-    transform: rotate(180deg);
-}
-
-/* --- CARD HEADERS MEJORADOS --- */
-.card-header {
-    background: linear-gradient(135deg, #B8D4E3 0%, #A8C8DC 100%) !important;
-    color: #2c3e50 !important;
-    font-weight: 600;
-    border: none;
-}
-
-.card {
-    border-radius: 10px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* --- BADGES PARA SECCIONALES --- */
-.seccional-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-/* --- FEEDBACK VISUAL --- */
-.selected-highlight {
-    border: 2px solid #2E86AB !important;
-    box-shadow: 0 0 10px rgba(46, 134, 171, 0.3) !important;
-}
-
-/* --- FOOTER MEJORADO --- */
-footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    border-top: 2px solid #e0e0e0;
-    background: #f8f9fa;
-}
-
-/* --- UTILITY CLASSES --- */
-.text-gradient {
-    background: linear-gradient(135deg, #2E86AB 0%, #1a5276 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    background-color: #f8fafc;
 }
 
 /* --- MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
     .container-fluid {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 10px;
     }
-
-    .card-body {
-        padding: 12px;
-    }
-
-    .btn {
-        width: 100%;
+    
+    h1 { font-size: 1.5rem !important; margin-top: 10px !important; }
+    h2 { font-size: 1rem !important; margin-bottom: 20px !important; }
+    
+    .metrics-row .card {
         margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-
-    /* Reducir espacio entre secciones en móvil */
-    .map-section {
-        margin-bottom: 1rem !important;
+    
+    .metrics-row .card-body {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
-}
-
-@media (max-width: 576px) {
-    /* Reducir aún más en pantallas pequeñas */
-    .map-section {
-        margin-bottom: 0.25rem !important;
+    
+    .metrics-row h6 {
+        margin-bottom: 0 !important;
+        margin-right: 10px;
     }
-
-    .card {
-        margin-bottom: 0.5rem !important;
-    }
-
-    .card-body {
-        padding: 8px !important;
-    }
-
-    /* Reducir altura del iframe del mapa en móvil */
-    #electoral-map {
-        height: 45vh !important;
-        min-height: 280px !important;
-    }
-
-    /* Reducir espacio entre gráficos laterales */
-    .chart-container {
-        margin-bottom: 0.5rem !important;
-    }
-}
-
-/* Para tablets */
-@media (max-width: 768px) and (min-width: 577px) {
-    .map-section {
-        margin-bottom: 0.5rem !important;
+    
+    .metrics-row h5 {
+        font-size: 1.1rem !important;
     }
 
     #electoral-map {
         height: 50vh !important;
+        min-height: 300px;
     }
-
-    .metrics-row {
-        margin-bottom: 0.5rem !important;
-    }
-}
-
-/* Métricas en móvil */
-@media (max-width: 576px) {
-    .metrics-row {
-        margin-bottom: 0.25rem !important;
-    }
-
-    .metrics-row .card {
-        margin-bottom: 0.35rem !important;
+    
+    .card-header {
+        padding: 0.75rem 1rem !important;
     }
 }
 
-/* --- PRINT STYLES --- */
-@media print {
-    .no-print {
-        display: none !important;
+@media (max-width: 480px) {
+    #electoral-map {
+        height: 60vh !important; /* Más altura para el mapa en móvil */
     }
-
-    .card {
-        break-inside: avoid;
+    
+    .map-section .col-md-8, 
+    .map-section .col-md-4 {
+        padding: 0 5px;
+    }
+    
+    .metric-value {
+        font-size: 1rem;
     }
 }
 
-/* --- ACCESIBILIDAD --- */
-*:focus {
-    outline: 2px solid #2E86AB !important;
-    outline-offset: 2px !important;
+/* --- FOOTER --- */
+footer {
+    margin-top: 40px;
+    padding: 30px 0;
+    border-top: 1px solid #edf2f7;
+    background: #ffffff;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
+/* --- UTILS --- */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
