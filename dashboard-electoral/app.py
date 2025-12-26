@@ -141,7 +141,7 @@ def create_folium_map(selected_year):
                 color: #333333;
                 font-family: Arial, sans-serif;
                 font-size: 11px;
-                font-weight: 600;
+                font-weight: normal;
                 padding: 6px 8px;
                 border: 1.5px solid #2E86AB;
                 border-radius: 4px;
@@ -228,9 +228,9 @@ app.layout = dbc.Container([
                     html.H6("Año Seleccionado", className="card-subtitle text-muted mb-1", style={'fontSize': '12px'}),
                     html.H5(id="metric-year", className="card-title mb-0", style={'fontSize': '20px'})
                 ])
-            ], className="mb-3")
+            ], className="mb-2")
         ], xs=12, sm=6, md=3)
-    ]),
+    ], className="metrics-row"),
 
     # Mapa principal
     dbc.Row([
@@ -276,7 +276,8 @@ app.layout = dbc.Container([
                     html.Iframe(
                         id="electoral-map",
                         srcDoc='',
-                        style={"height": "60vh", "width": "100%", "border": "none"}
+                        style={"height": "60vh", "width": "100%", "border": "none"},
+                        className="responsive-map"
                     )
                 ])
             ])
@@ -317,7 +318,7 @@ app.layout = dbc.Container([
                 ])
             ])
         ])
-    ], className="mb-4"),
+    ], className="mb-2"),
 
     # Footer
     dbc.Row([

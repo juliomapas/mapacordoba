@@ -205,8 +205,8 @@
 
 /* --- CARD HEADERS MEJORADOS --- */
 .card-header {
-    background: linear-gradient(135deg, #2E86AB 0%, #1a5276 100%);
-    color: white;
+    background: linear-gradient(135deg, #B8D4E3 0%, #A8C8DC 100%) !important;
+    color: #2c3e50 !important;
     font-weight: 600;
     border: none;
 }
@@ -288,11 +288,52 @@ footer {
 @media (max-width: 576px) {
     /* Reducir aún más en pantallas pequeñas */
     .map-section {
-        margin-bottom: 0.75rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
     .card {
-        margin-bottom: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .card-body {
+        padding: 8px !important;
+    }
+
+    /* Reducir altura del iframe del mapa en móvil */
+    #electoral-map {
+        height: 45vh !important;
+        min-height: 280px !important;
+    }
+
+    /* Reducir espacio entre gráficos laterales */
+    .chart-container {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 768px) and (min-width: 577px) {
+    .map-section {
+        margin-bottom: 0.5rem !important;
+    }
+
+    #electoral-map {
+        height: 50vh !important;
+    }
+
+    .metrics-row {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+/* Métricas en móvil */
+@media (max-width: 576px) {
+    .metrics-row {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .metrics-row .card {
+        margin-bottom: 0.35rem !important;
     }
 }
 

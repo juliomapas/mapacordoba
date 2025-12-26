@@ -63,26 +63,70 @@
     cursor: pointer !important;
 }
 
+/* Estilos para tooltips de Folium - BASE */
+.leaflet-tooltip {
+    font-size: 10px !important;
+    padding: 5px 7px !important;
+    max-width: 150px !important;
+    line-height: 1.2 !important;
+    font-weight: normal !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
 /* Estilos responsive para tooltips de Folium en móvil */
 @media (max-width: 768px) {
     .leaflet-tooltip {
-        font-size: 9px !important;
-        padding: 4px 6px !important;
-        max-width: 140px !important;
-        line-height: 1.2 !important;
+        font-size: 8px !important;
+        padding: 3px 5px !important;
+        max-width: 110px !important;
+        line-height: 1.1 !important;
+        border-width: 1px !important;
     }
 
     .leaflet-tooltip-left::before,
     .leaflet-tooltip-right::before {
-        border-width: 4px !important;
+        border-width: 3px !important;
+    }
+
+    /* Reducir tamaño de texto dentro del tooltip */
+    .leaflet-tooltip * {
+        font-size: 8px !important;
     }
 }
 
 @media (max-width: 480px) {
     .leaflet-tooltip {
-        font-size: 8px !important;
-        padding: 3px 5px !important;
-        max-width: 120px !important;
-        line-height: 1.1 !important;
+        font-size: 7px !important;
+        padding: 2px 4px !important;
+        max-width: 90px !important;
+        line-height: 1.0 !important;
+        border-width: 1px !important;
+        font-weight: normal !important;
+    }
+
+    .leaflet-tooltip * {
+        font-size: 7px !important;
+        font-weight: normal !important;
+    }
+}
+
+/* Estilos adicionales para tooltip centrado en móvil */
+@media (max-width: 768px) {
+    .leaflet-tooltip {
+        /* Asegurar que el tooltip sea visible por encima de todo */
+        z-index: 9999 !important;
+        /* Sombra más pronunciada para destacar sobre el mapa */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+        /* Fondo más opaco */
+        background-color: rgba(255, 255, 255, 0.98) !important;
+    }
+
+    /* Ocultar la flecha del tooltip en móvil (no tiene sentido si está centrado) */
+    .leaflet-tooltip-left::before,
+    .leaflet-tooltip-right::before,
+    .leaflet-tooltip-top::before,
+    .leaflet-tooltip-bottom::before {
+        display: none !important;
     }
 }
