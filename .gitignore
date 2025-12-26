@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data
+# Keep structure but ignore processed files
+data/processed/*.csv
+data/processed/*.db
+data/processed/*.geojson
+
+# Outputs
+outputs/maps/*.html
+outputs/reports/*.html
+outputs/reports/*.pdf
+outputs/figures/*.png
+outputs/figures/*.jpg
+outputs/figures/*.svg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Temporary files
+*.log
+*.tmp
+analyze_geojson.py
+nul

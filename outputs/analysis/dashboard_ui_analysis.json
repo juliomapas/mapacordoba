@@ -1,0 +1,236 @@
+{
+  "fecha_analisis": "2025-12-25",
+  "dashboard": "Electoral Córdoba Capital 2021-2025",
+  "responsive_design": {
+    "score": 90,
+    "status": "excellent",
+    "issues": [
+      {
+        "severity": "medium",
+        "message": "Found 4 fixed pixel heights",
+        "recommendation": "Use relative units (%, vh) or let content determine height",
+        "locations": [
+          "600",
+          "280",
+          "280"
+        ]
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "info",
+        "message": "Ensure viewport meta tag is present in HTML",
+        "note": "Dash usually handles this automatically"
+      }
+    ],
+    "responsive_breakpoints": {
+      "xs": {
+        "min": 0,
+        "max": 575,
+        "description": "Extra small devices (phones, portrait)"
+      },
+      "sm": {
+        "min": 576,
+        "max": 767,
+        "description": "Small devices (phones, landscape)"
+      },
+      "md": {
+        "min": 768,
+        "max": 991,
+        "description": "Medium devices (tablets)"
+      },
+      "lg": {
+        "min": 992,
+        "max": 1199,
+        "description": "Large devices (desktops)"
+      },
+      "xl": {
+        "min": 1200,
+        "max": 1399,
+        "description": "Extra large devices (large desktops)"
+      },
+      "xxl": {
+        "min": 1400,
+        "max": 9999,
+        "description": "Extra extra large devices (larger desktops)"
+      }
+    },
+    "summary": "Found 1 issues and 1 recommendations"
+  },
+  "party_colors": {
+    "valid": true,
+    "validation_score": 100.0,
+    "violations": [],
+    "warnings": [],
+    "valid_parties": [
+      "JUNTOS POR EL CAMBIO",
+      "LA LIBERTAD AVANZA",
+      "HACEMOS POR CÓRDOBA",
+      "DEFAULT",
+      "UNIÓN POR LA PATRIA",
+      "FRENTE DE IZQUIERDA  Y DE TRABAJADORES - UNIDAD",
+      "FRENTE DE IZQUIERDA",
+      "ALIANZA LA LIBERTAD AVANZA"
+    ],
+    "summary": "8 valid, 0 violations, 0 warnings",
+    "design_system_reference": {
+      "LA LIBERTAD AVANZA": "#9370DB",
+      "ALIANZA LA LIBERTAD AVANZA": "#9370DB",
+      "JUNTOS POR EL CAMBIO": "#FFD700",
+      "HACEMOS POR CÓRDOBA": "#87CEEB",
+      "UNIÓN POR LA PATRIA": "#0047AB",
+      "FRENTE DE IZQUIERDA": "#DC143C",
+      "FRENTE DE IZQUIERDA  Y DE TRABAJADORES - UNIDAD": "#DC143C",
+      "DEFAULT": "#CCCCCC"
+    }
+  },
+  "accessibility": {
+    "accessibility_score": 65,
+    "compliance_level": "Partial AA",
+    "issues": [
+      {
+        "severity": "medium",
+        "wcag_criterion": "1.3.1 Info and Relationships",
+        "message": "No ARIA labels found",
+        "recommendation": "Add aria-label to interactive elements for screen readers",
+        "example": "dcc.Graph(..., config={'displayModeBar': False}, aria={'label': 'Electoral map'})"
+      },
+      {
+        "severity": "medium",
+        "wcag_criterion": "1.3.1 Info and Relationships",
+        "message": "Heading levels skip from H1 to H5",
+        "recommendation": "Use sequential heading levels (H1 → H2 → H3, not H1 → H3)"
+      },
+      {
+        "severity": "low",
+        "wcag_criterion": "2.1.1 Keyboard",
+        "message": "No explicit keyboard navigation support found",
+        "recommendation": "Ensure interactive elements are keyboard accessible",
+        "note": "Dash components usually handle this automatically"
+      },
+      {
+        "severity": "low",
+        "wcag_criterion": "2.4.7 Focus Visible",
+        "message": "No custom focus indicators defined",
+        "recommendation": "Ensure focus indicators are visible (browser defaults usually sufficient)",
+        "note": "CSS: :focus { outline: 2px solid #005fcc; }"
+      }
+    ],
+    "total_issues": 4,
+    "high_severity": 0,
+    "medium_severity": 2,
+    "low_severity": 2,
+    "summary": "Accessibility score: 65/100 - 4 issues found",
+    "wcag_reference": "https://www.w3.org/WAI/WCAG21/quickref/"
+  },
+  "ui_suggestions": {
+    "focus_area": "all",
+    "total_suggestions": 4,
+    "suggestions": [
+      {
+        "category": "colors",
+        "priority": "low",
+        "message": "Using pure black/white colors",
+        "recommendation": "Consider using softer shades for better visual comfort",
+        "example": "Use #1a1a1a instead of #000000, #f8f9fa instead of #ffffff"
+      },
+      {
+        "category": "charts",
+        "priority": "high",
+        "message": "Using deprecated choroplethmapbox",
+        "recommendation": "Update to choroplethmap (MapLibre)",
+        "migration": "https://plotly.com/python/mapbox-to-maplibre/",
+        "example": "go.Choroplethmap(...) instead of go.Choroplethmapbox(...)"
+      },
+      {
+        "category": "charts",
+        "priority": "high",
+        "message": "Using deprecated scattermapbox",
+        "recommendation": "Update to scattermap (MapLibre)",
+        "migration": "https://plotly.com/python/mapbox-to-maplibre/",
+        "example": "go.Scattermap(...) instead of go.Scattermapbox(...)"
+      },
+      {
+        "category": "charts",
+        "priority": "medium",
+        "message": "Using fixed pixel heights for charts",
+        "recommendation": "Consider using viewport units for better responsiveness",
+        "example": "style={\"height\": \"60vh\"} instead of \"600px\""
+      }
+    ],
+    "priority_actions": [
+      {
+        "category": "charts",
+        "priority": "high",
+        "message": "Using deprecated choroplethmapbox",
+        "recommendation": "Update to choroplethmap (MapLibre)",
+        "migration": "https://plotly.com/python/mapbox-to-maplibre/",
+        "example": "go.Choroplethmap(...) instead of go.Choroplethmapbox(...)"
+      },
+      {
+        "category": "charts",
+        "priority": "high",
+        "message": "Using deprecated scattermapbox",
+        "recommendation": "Update to scattermap (MapLibre)",
+        "migration": "https://plotly.com/python/mapbox-to-maplibre/",
+        "example": "go.Scattermap(...) instead of go.Scattermapbox(...)"
+      }
+    ],
+    "design_system_reference": {
+      "spacing": {
+        "base_unit": 8,
+        "scale": [
+          4,
+          8,
+          12,
+          16,
+          24,
+          32,
+          48,
+          64
+        ],
+        "description": "Use 8px base unit for consistent spacing"
+      },
+      "typography": {
+        "font_family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+        "base_size": 14,
+        "scale": {
+          "h1": 32,
+          "h2": 28,
+          "h3": 24,
+          "h4": 20,
+          "h5": 16,
+          "h6": 14,
+          "body": 14,
+          "small": 12
+        }
+      },
+      "borders": {
+        "radius": {
+          "small": 4,
+          "medium": 8,
+          "large": 12,
+          "circle": "50%"
+        },
+        "width": {
+          "thin": 1,
+          "medium": 2,
+          "thick": 3
+        }
+      },
+      "shadows": {
+        "subtle": "0 1px 3px rgba(0,0,0,0.12)",
+        "medium": "0 3px 6px rgba(0,0,0,0.15)",
+        "strong": "0 10px 20px rgba(0,0,0,0.19)"
+      },
+      "animations": {
+        "duration": {
+          "fast": "150ms",
+          "normal": "300ms",
+          "slow": "500ms"
+        },
+        "easing": "ease-in-out"
+      }
+    }
+  }
+}

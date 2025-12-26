@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: dashboard-electoral-cordoba
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app_improved:server
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7

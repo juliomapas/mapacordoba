@@ -1,0 +1,165 @@
+{
+  "party_colors": {
+    "LA LIBERTAD AVANZA": {
+      "primary": "#9370DB",
+      "light": "#B199E5",
+      "dark": "#6B4FA3",
+      "text": "#FFFFFF",
+      "description": "Violeta - La Libertad Avanza"
+    },
+    "ALIANZA LA LIBERTAD AVANZA": {
+      "primary": "#9370DB",
+      "light": "#B199E5",
+      "dark": "#6B4FA3",
+      "text": "#FFFFFF",
+      "description": "Violeta - Alianza La Libertad Avanza"
+    },
+    "JUNTOS POR EL CAMBIO": {
+      "primary": "#FFD700",
+      "light": "#FFED4E",
+      "dark": "#CCA300",
+      "text": "#000000",
+      "description": "Amarillo - Juntos por el Cambio"
+    },
+    "HACEMOS POR CÓRDOBA": {
+      "primary": "#87CEEB",
+      "light": "#B0E0F5",
+      "dark": "#5FADD1",
+      "text": "#000000",
+      "description": "Celeste - Hacemos por Córdoba"
+    },
+    "UNIÓN POR LA PATRIA": {
+      "primary": "#0047AB",
+      "light": "#3370C5",
+      "dark": "#003280",
+      "text": "#FFFFFF",
+      "description": "Azul - Unión por la Patria"
+    },
+    "FRENTE DE IZQUIERDA": {
+      "primary": "#DC143C",
+      "light": "#E54863",
+      "dark": "#A30F2B",
+      "text": "#FFFFFF",
+      "description": "Rojo - Frente de Izquierda"
+    },
+    "FRENTE DE IZQUIERDA  Y DE TRABAJADORES - UNIDAD": {
+      "primary": "#DC143C",
+      "light": "#E54863",
+      "dark": "#A30F2B",
+      "text": "#FFFFFF",
+      "description": "Rojo - Frente de Izquierda y de Trabajadores"
+    },
+    "DEFAULT": {
+      "primary": "#CCCCCC",
+      "light": "#E0E0E0",
+      "dark": "#999999",
+      "text": "#000000",
+      "description": "Gris - Color por defecto"
+    }
+  },
+  "responsive_breakpoints": {
+    "xs": {
+      "min": 0,
+      "max": 575,
+      "description": "Extra small devices (phones, portrait)"
+    },
+    "sm": {
+      "min": 576,
+      "max": 767,
+      "description": "Small devices (phones, landscape)"
+    },
+    "md": {
+      "min": 768,
+      "max": 991,
+      "description": "Medium devices (tablets)"
+    },
+    "lg": {
+      "min": 992,
+      "max": 1199,
+      "description": "Large devices (desktops)"
+    },
+    "xl": {
+      "min": 1200,
+      "max": 1399,
+      "description": "Extra large devices (large desktops)"
+    },
+    "xxl": {
+      "min": 1400,
+      "max": 9999,
+      "description": "Extra extra large devices (larger desktops)"
+    }
+  },
+  "accessibility_rules": {
+    "minimum_contrast_ratio": 4.5,
+    "minimum_touch_target": 44,
+    "required_aria_labels": true,
+    "keyboard_navigation": true,
+    "screen_reader_compatible": true,
+    "color_blind_safe": true
+  },
+  "ui_best_practices": {
+    "spacing": {
+      "base_unit": 8,
+      "scale": [4, 8, 12, 16, 24, 32, 48, 64],
+      "description": "Use 8px base unit for consistent spacing"
+    },
+    "typography": {
+      "font_family": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+      "base_size": 14,
+      "scale": {
+        "h1": 32,
+        "h2": 28,
+        "h3": 24,
+        "h4": 20,
+        "h5": 16,
+        "h6": 14,
+        "body": 14,
+        "small": 12
+      }
+    },
+    "borders": {
+      "radius": {
+        "small": 4,
+        "medium": 8,
+        "large": 12,
+        "circle": "50%"
+      },
+      "width": {
+        "thin": 1,
+        "medium": 2,
+        "thick": 3
+      }
+    },
+    "shadows": {
+      "subtle": "0 1px 3px rgba(0,0,0,0.12)",
+      "medium": "0 3px 6px rgba(0,0,0,0.15)",
+      "strong": "0 10px 20px rgba(0,0,0,0.19)"
+    },
+    "animations": {
+      "duration": {
+        "fast": "150ms",
+        "normal": "300ms",
+        "slow": "500ms"
+      },
+      "easing": "ease-in-out"
+    }
+  },
+  "dashboard_specific": {
+    "map_styles": {
+      "border_width": 1.5,
+      "border_color": "#2E86AB",
+      "fill_opacity": 0.6,
+      "hover_opacity": 0.8
+    },
+    "chart_colors": {
+      "background": "#FFFFFF",
+      "grid": "#E5E5E5",
+      "text": "#333333"
+    },
+    "card_styles": {
+      "border_radius": 8,
+      "shadow": "0 2px 4px rgba(0,0,0,0.1)",
+      "padding": 16
+    }
+  }
+}

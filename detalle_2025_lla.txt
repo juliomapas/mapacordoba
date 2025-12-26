@@ -1,0 +1,27 @@
+DETALLE VOTO POR VOTO - ALIANZA LA LIBERTAD AVANZA 2025
+=================================================================
+
+Seccional  1:   4,454 votos
+Seccional  2:   1,659 votos
+Seccional  3:   5,627 votos
+Seccional  4:  23,381 votos
+Seccional  5:  19,590 votos
+Seccional  6:  10,023 votos
+Seccional  7:  21,222 votos
+Seccional  8:   8,787 votos
+Seccional  9:  21,000 votos
+Seccional 10:  46,745 votos
+Seccional 11:  48,391 votos  ← ESTA PODRÍA SER LA QUE FALTA
+Seccional 12:  32,718 votos
+Seccional 13:  37,026 votos
+Seccional 14:  40,122 votos
+-----------------------------------------------------------------
+TOTAL:        320,745 votos
+
+Si sumamos SIN la Seccional 11:
+320,745 - 48,391 = 272,354 votos ← EXACTAMENTE LO QUE CALCULASTE!
+
+=================================================================
+CONCLUSIÓN: El Excel tiene los 320,745 votos correctos.
+La suma manual de 272,354 probablemente omitió la Seccional 11.
+=================================================================

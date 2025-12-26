@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebSearch",
+      "Bash(ls:*)",
+      "Bash(timeout:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(venv/Scripts/pip install:*)",
+      "Bash(venv/Scripts/python:*)",
+      "Bash(mkdir:*)",
+      "Bash(pip install:*)",
+      "Bash(cmd /c \"venv\\\\Scripts\\\\pip install mcp\")",
+      "Bash(tasklist:*)",
+      "Bash(curl:*)",
+      "Bash(ping:*)",
+      "Bash(cmd /c \"venv\\\\Scripts\\\\pip install dash-leaflet\")",
+      "Bash(./venv/Scripts/python:*)"
+    ]
+  }
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d72b78f64f60447a5301ea2a8972c709 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            background-color: white; color: #333333; font-family: Arial, sans-serif; font-size: 13px; padding: 10px; border: 2px solid #2E86AB; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 250px;
+        background-color: white;
+        border: 2px solid #2E86AB;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        z-index: 9999;
+    ">
+        <h4 style="margin: 0 0 10px 0; color: #2E86AB; font-size: 14px;">
+            ELECCIONES 2021
+        </h4>
+    
+        <div style="margin: 5px 0;">
+            <span style="
+                display: inline-block;
+                width: 20px;
+                height: 14px;
+                background-color: #FFD700;
+                border: 1px solid #333;
+                margin-right: 8px;
+                vertical-align: middle;
+            "></span>
+            <span style="font-size: 11px;">JUNTOS POR EL CAMBIO (14)</span>
+        </div>
+        </div>
+    
+            <div class="folium-map" id="map_d72b78f64f60447a5301ea2a8972c709" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d72b78f64f60447a5301ea2a8972c709 = L.map(
+                "map_d72b78f64f60447a5301ea2a8972c709",
+                {
+                    center: [-31.4201, -64.1888],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d5653d621dfa03ee3dc3fd4454fbfc54 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 11,
+  "maxZoom": 14,
+  "maxNativeZoom": 14,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d5653d621dfa03ee3dc3fd4454fbfc54.addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+        function geo_json_c8092f9c111e3563465827b31f3e786f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#2E86AB", "fillColor": "#FFD700", "fillOpacity": 0.6, "opacity": 1, "weight": 1.5};
+            }
+        }
+        function geo_json_c8092f9c111e3563465827b31f3e786f_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#2E86AB", "fillColor": "#FFD700", "fillOpacity": 0.85, "opacity": 1, "weight": 2.5};
+            }
+        }
+
+        function geo_json_c8092f9c111e3563465827b31f3e786f_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_c8092f9c111e3563465827b31f3e786f.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_c8092f9c111e3563465827b31f3e786f_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_c8092f9c111e3563465827b31f3e786f = L.geoJson(null, {
+                onEachFeature: geo_json_c8092f9c111e3563465827b31f3e786f_onEachFeature,
+            
+                style: geo_json_c8092f9c111e3563465827b31f3e786f_styler,
+            ...{
+}
+        });
+
+        function geo_json_c8092f9c111e3563465827b31f3e786f_add (data) {
+            geo_json_c8092f9c111e3563465827b31f3e786f
+                .addData(data);
+        }
+            geo_json_c8092f9c111e3563465827b31f3e786f_add({"bbox": [-64.309786, -31.524984, -64.057383, -31.308527], "features": [{"bbox": [-64.192795, -31.42383299999999, -64.174518, -31.40941], "geometry": {"coordinates": [[[-64.174518, -31.42383299999999], [-64.192795, -31.419082], [-64.18896, -31.40941], [-64.175251, -31.413396], [-64.176159, -31.417071], [-64.174518, -31.42383299999999]]], "type": "Polygon"}, "id": "0", "properties": {"Seccional": "1", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 1", "porcentaje": 60.3, "porcentaje_formatted": "60.3%", "total_votos": 9791, "total_votos_formatted": "9,791", "votos": 5904, "votos_formatted": "5,904"}, "type": "Feature"}, {"bbox": [-64.309786, -31.524984, -64.188762, -31.41626], "geometry": {"coordinates": [[[-64.232801, -31.524984], [-64.309786, -31.524984], [-64.309786, -31.436778], [-64.213363, -31.430374], [-64.210831, -31.428968], [-64.207629, -31.417069], [-64.206208, -31.41626], [-64.188762, -31.42011400000001], [-64.20101, -31.454356], [-64.204458, -31.471809], [-64.202511, -31.475253], [-64.204836, -31.486094], [-64.214116, -31.500106], [-64.2219, -31.507456], [-64.232801, -31.524984]], [[-64.2298722630521, -31.49833790101091], [-64.227627394369, -31.4922419738637], [-64.224978, -31.482466], [-64.2298722630521, -31.49833790101091]], [[-64.237807, -31.48161], [-64.2318630892315, -31.48209239383488], [-64.233947226427, -31.493691362387942], [-64.23159626683339, -31.48170776998341], [-64.227218, -31.481638], [-64.237807, -31.48161]], [[-64.239047, -31.472673], [-64.239039, -31.472629], [-64.251447, -31.472528], [-64.239047, -31.472673]], [[-64.248047, -31.481572], [-64.249394, -31.481568], [-64.242335, -31.481596], [-64.248047, -31.481572]], [[-64.21795996076038, -31.455389856456506], [-64.235687, -31.451486], [-64.21796, -31.45539], [-64.21795996076038, -31.455389856456506]]], "type": "Polygon"}, "id": "1", "properties": {"Seccional": "10", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 10", "porcentaje": 52.12, "porcentaje_formatted": "52.1%", "total_votos": 108509, "total_votos_formatted": "108,509", "votos": 56553, "votos_formatted": "56,553"}, "type": "Feature"}, {"bbox": [-64.309786, -31.436778, -64.202549, -31.337443], "geometry": {"coordinates": [[[-64.211346, -31.429383], [-64.309786, -31.436778], [-64.309786, -31.337481], [-64.304739, -31.337443], [-64.30475, -31.339319], [-64.302494, -31.338149], [-64.29832, -31.344831], [-64.295038, -31.34667900000001], [-64.299867, -31.351886], [-64.296996, -31.353298], [-64.290138, -31.349825], [-64.286794, -31.359881], [-64.284584, -31.359169], [-64.282003, -31.354187], [-64.281655, -31.347669], [-64.277905, -31.351177], [-64.266059, -31.353816], [-64.263753, -31.35684699999999], [-64.259253, -31.358541], [-64.261689, -31.364884], [-64.261248, -31.368394], [-64.259448, -31.369698], [-64.255068, -31.369062], [-64.245228, -31.362158], [-64.240356, -31.362372], [-64.240525, -31.367096], [-64.243138, -31.371504], [-64.24253, -31.375355], [-64.249716, -31.37578299999999], [-64.249512, -31.382403], [-64.246763, -31.384574], [-64.221394, -31.395123], [-64.210481, -31.39137], [-64.205906, -31.391866], [-64.202837, -31.394799], [-64.202549, -31.397908], [-64.205455, -31.399788], [-64.211064, -31.411155], [-64.206333, -31.412636], [-64.202654, -31.416704], [-64.207629, -31.417069], [-64.211346, -31.429383]], [[-64.29723260656382, -31.371546155330236], [-64.29019115459708, -31.37727838194726], [-64.2900221004995, -31.377152994081996], [-64.29723260656382, -31.371546155330236]], [[-64.24715706439426, -31.40963066795563], [-64.24787656946519, -31.408874947849647], [-64.24677084483893, -31.410989801192617], [-64.24638, -31.407212], [-64.24715706439426, -31.40963066795563]], [[-64.24713239256455, -31.411595457407834], [-64.246709, -31.411443], [-64.24671379933129, -31.4114001488278], [-64.24713239256455, -31.411595457407834]], [[-64.2534595045856, -31.41153917609109], [-64.25333833735475, -31.419117185500614], [-64.253368, -31.411547], [-64.24791947227644, -31.41187887318477], [-64.2534595045856, -31.41153917609109]], [[-64.269391, -31.420541], [-64.253352, -31.420458], [-64.25335085725355, -31.42034585400033], [-64.269391, -31.420541]], [[-64.26987671508903, -31.408132833875964], [-64.27035944636737, -31.4113622957787], [-64.28229974290724, -31.410910788083314], [-64.26981403258524, -31.41146893327846], [-64.26987671508903, -31.408132833875964]], [[-64.26973551413641, -31.40703168789699], [-64.26974887519476, -31.40713411719131], [-64.26795532414876, -31.40701009087467], [-64.26973551413641, -31.40703168789699]], [[-64.267293, -31.396409], [-64.26785846221203, -31.398449223717694], [-64.267793, -31.398307], [-64.267293, -31.396409]], [[-64.25729781158238, -31.406273110440775], [-64.248596598369, -31.40811867754457], [-64.25056608648376, -31.40721996515013], [-64.2564692788315, -31.4057286405016], [-64.25729781158238, -31.406273110440775]], [[-64.28806874017341, -31.37570418163146], [-64.2864645082339, -31.374514318616196], [-64.2866464899893, -31.37437780347591], [-64.28806874017341, -31.37570418163146]], [[-64.25981007421316, -31.375718642019457], [-64.25835106251428, -31.37625737458508], [-64.25650069595875, -31.37642002822728], [-64.25981007421316, -31.375718642019457]], [[-64.226682, -31.417135], [-64.225754, -31.413537], [-64.227135, -31.418845], [-64.226682, -31.417135]], [[-64.228064, -31.405847], [-64.229055, -31.405674], [-64.227233, -31.406006], [-64.228064, -31.405847]]], "type": "Polygon"}, "id": "2", "properties": {"Seccional": "11", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 11", "porcentaje": 56.2, "porcentaje_formatted": "56.2%", "total_votos": 107173, "total_votos_formatted": "107,173", "votos": 60235, "votos_formatted": "60,235"}, "type": "Feature"}, {"bbox": [-64.170522, -31.524984, -64.057384, -31.425095], "geometry": {"coordinates": [[[-64.07086012914729, -31.47575031350513], [-64.05743353595878, -31.48740149225661], [-64.057384, -31.524984], [-64.168484, -31.524984], [-64.168075, -31.468306], [-64.168771, -31.434715], [-64.170522, -31.425095], [-64.1553, -31.427697], [-64.146739, -31.431434], [-64.146255, -31.433232], [-64.146736, -31.431434], [-64.135824, -31.433659], [-64.11804613580135, -31.450069199481735], [-64.11536, -31.450903], [-64.074642, -31.451007], [-64.057384, -31.442331], [-64.057384, -31.487339], [-64.078413, -31.468972], [-64.07126513980353, -31.47553218504745], [-64.08114973352622, -31.475665787348877], [-64.07086012914729, -31.47575031350513]], [[-64.114697, -31.460443], [-64.14615, -31.460161], [-64.146229, -31.45961], [-64.146344, -31.459106], [-64.14656, -31.458869], [-64.147181, -31.458679], [-64.14755600000035, -31.458636545150462], [-64.146153, -31.460161], [-64.114697, -31.460443]], [[-64.076675, -31.490772], [-64.09188824446429, -31.475577573553668], [-64.104638, -31.463625], [-64.076675, -31.490772]], [[-64.148543, -31.44199], [-64.148098, -31.457913], [-64.14854, -31.44199], [-64.14457100000165, -31.44182420852173], [-64.148543, -31.44199]], [[-64.14409, -31.438785], [-64.144105, -31.44112], [-64.14418698956803, -31.44183590891104], [-64.144102, -31.44112], [-64.14409, -31.438785]], [[-64.145699, -31.438608], [-64.145696, -31.438785998132005], [-64.14572499997263, -31.433231005660325], [-64.145699, -31.438608]]], "type": "Polygon"}, "id": "3", "properties": {"Seccional": "12", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 12", "porcentaje": 51.73, "porcentaje_formatted": "51.7%", "total_votos": 79478, "total_votos_formatted": "79,478", "votos": 41115, "votos_formatted": "41,115"}, "type": "Feature"}, {"bbox": [-64.177258, -31.399396, -64.057384, -31.308527], "geometry": {"coordinates": [[[-64.057384, -31.370984], [-64.169942, -31.399353], [-64.175819, -31.399396], [-64.176126, -31.372483], [-64.175906, -31.316534], [-64.175976, -31.313107], [-64.177258, -31.312434], [-64.176522, -31.308528], [-64.10794558586436, -31.30857657534687], [-64.11144485368901, -31.332104439622338], [-64.10785487377773, -31.3085765768562], [-64.057384, -31.308527], [-64.057384, -31.370984]], [[-64.169616, -31.384303], [-64.169606, -31.384281], [-64.175961, -31.382326], [-64.169616, -31.384303]], [[-64.1265, -31.384298], [-64.126764, -31.381354], [-64.126269, -31.387098], [-64.1265, -31.384298]], [[-64.147596, -31.348422], [-64.147698, -31.362238], [-64.14757249769404, -31.34840447384734], [-64.147596, -31.348422]], [[-64.159785, -31.386283], [-64.160574, -31.38711], [-64.163096, -31.390004], [-64.159785, -31.386283]], [[-64.1176978820082, -31.33340438608365], [-64.119269, -31.34328], [-64.11761942610028, -31.33349067409483], [-64.11486447457871, -31.333764949261347], [-64.1176978820082, -31.33340438608365]]], "type": "Polygon"}, "id": "4", "properties": {"Seccional": "13", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 13", "porcentaje": 54.34, "porcentaje_formatted": "54.3%", "total_votos": 88464, "total_votos_formatted": "88,464", "votos": 48071, "votos_formatted": "48,071"}, "type": "Feature"}, {"bbox": [-64.309786, -31.391196, -64.202596, -31.308527], "geometry": {"coordinates": [[[-64.259113, -31.35894], [-64.267401, -31.35298], [-64.277905, -31.351177], [-64.281655, -31.347669], [-64.282003, -31.354187], [-64.286332, -31.359907], [-64.290243, -31.349737], [-64.296996, -31.353298], [-64.299958, -31.351795], [-64.295038, -31.34667900000001], [-64.29832, -31.344831], [-64.302494, -31.338149], [-64.30475, -31.339319], [-64.304739, -31.337443], [-64.309786, -31.337481], [-64.309786, -31.308527], [-64.220683, -31.308528], [-64.210532, -31.328511], [-64.208014, -31.336671], [-64.207858, -31.343453], [-64.202721, -31.351674], [-64.202596, -31.354243], [-64.218134, -31.354836], [-64.223348, -31.382735], [-64.232708, -31.391196], [-64.248497, -31.383573], [-64.249608, -31.375413], [-64.24253, -31.375355], [-64.243138, -31.371504], [-64.2398, -31.362937], [-64.245251, -31.36217], [-64.254643, -31.368832], [-64.259139, -31.369788], [-64.261248, -31.368394], [-64.261689, -31.364884], [-64.259113, -31.35894]], [[-64.271463, -31.34729799999999], [-64.264387, -31.347744], [-64.26535, -31.347683], [-64.271463, -31.34729799999999]], [[-64.26870656844136, -31.33484725815077], [-64.26872088113059, -31.334847217009827], [-64.26868690726964, -31.334850399914465], [-64.26870656844136, -31.33484725815077]], [[-64.2654739948337, -31.33497622404006], [-64.26547395273435, -31.33492557199884], [-64.2671235513811, -31.334977941451942], [-64.2654739948337, -31.33497622404006]], [[-64.298403, -31.337652], [-64.298332, -31.337607], [-64.29985, -31.33752700000001], [-64.298403, -31.337652]], [[-64.2882353255809, -31.31989401292125], [-64.2848483738844, -31.319871174812853], [-64.288404, -31.319761], [-64.288605, -31.325754], [-64.2882353255809, -31.31989401292125]], [[-64.28316556339087, -31.319859827674804], [-64.282616, -31.325466], [-64.282512, -31.319553], [-64.28316556339087, -31.319859827674804]], [[-64.274716, -31.316064], [-64.274713, -31.316056], [-64.27604, -31.314184], [-64.274716, -31.316064]], [[-64.240395, -31.335401], [-64.240395, -31.335652], [-64.240309, -31.335797], [-64.240395, -31.335401]]], "type": "Polygon"}, "id": "5", "properties": {"Seccional": "14", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 14", "porcentaje": 58.79, "porcentaje_formatted": "58.8%", "total_votos": 84138, "total_votos_formatted": "84,138", "votos": 49464, "votos_formatted": "49,464"}, "type": "Feature"}, {"bbox": [-64.18896, -31.413396, -64.173388, -31.404261], "geometry": {"coordinates": [[[-64.175825, -31.405701], [-64.173388, -31.40884], [-64.175251, -31.413396], [-64.18896, -31.40941], [-64.187869, -31.406352], [-64.183027, -31.406245], [-64.182555, -31.404261], [-64.175825, -31.405701]]], "type": "Polygon"}, "id": "6", "properties": {"Seccional": "2", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 2", "porcentaje": 55.92, "porcentaje_formatted": "55.9%", "total_votos": 3666, "total_votos_formatted": "3,666", "votos": 2050, "votos_formatted": "2,050"}, "type": "Feature"}, {"bbox": [-64.210268, -31.419082, -64.187869, -31.39987], "geometry": {"coordinates": [[[-64.204529, -31.39987], [-64.202889, -31.403747], [-64.187869, -31.406352], [-64.192795, -31.419082], [-64.202654, -31.416704], [-64.206333, -31.412636], [-64.210268, -31.411397], [-64.204529, -31.39987]]], "type": "Polygon"}, "id": "7", "properties": {"Seccional": "3", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 3", "porcentaje": 57.25, "porcentaje_formatted": "57.2%", "total_votos": 13177, "total_votos_formatted": "13,177", "votos": 7544, "votos_formatted": "7,544"}, "type": "Feature"}, {"bbox": [-64.232801, -31.524984, -64.168484, -31.42011400000001], "geometry": {"coordinates": [[[-64.169495, -31.427206], [-64.168484, -31.524984], [-64.232801, -31.524984], [-64.2219, -31.507456], [-64.214116, -31.500106], [-64.20465988805098, -31.486161013494513], [-64.202511, -31.475253], [-64.204458, -31.471809], [-64.20101, -31.454356], [-64.188762, -31.42011400000001], [-64.175259, -31.424097], [-64.173981, -31.423344], [-64.169495, -31.427206]], [[-64.19748757354704, -31.48889019718322], [-64.20052207079956, -31.499571200828097], [-64.19744166582532, -31.488898451995485], [-64.19748757354704, -31.48889019718322]], [[-64.189735, -31.500272], [-64.18966742573363, -31.496364705753628], [-64.190581, -31.510569], [-64.189735, -31.500272]], [[-64.20074388242398, -31.52083188921327], [-64.20912178659201, -31.52091543931778], [-64.20909215188921, -31.521243130301578], [-64.20074388242398, -31.52083188921327]]], "type": "Polygon"}, "id": "8", "properties": {"Seccional": "4", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 4", "porcentaje": 59.09, "porcentaje_formatted": "59.1%", "total_votos": 46705, "total_votos_formatted": "46,705", "votos": 27597, "votos_formatted": "27,597"}, "type": "Feature"}, {"bbox": [-64.173981, -31.45138010908558, -64.057383, -31.403709], "geometry": {"coordinates": [[[-64.11805, -31.450068], [-64.137036, -31.433097], [-64.173981, -31.423344], [-64.159822, -31.421772], [-64.156179, -31.416226], [-64.146179, -31.418569], [-64.142775, -31.416247], [-64.141245, -31.405484], [-64.131795, -31.405463], [-64.128215, -31.40846], [-64.123267, -31.406539], [-64.121718, -31.403709], [-64.118069, -31.405779], [-64.107827, -31.405859], [-64.104781, -31.411214], [-64.100103, -31.410206], [-64.093672, -31.413216], [-64.090953, -31.409932], [-64.086183, -31.411765], [-64.081839, -31.409351], [-64.073089, -31.416962], [-64.065912, -31.417739], [-64.061715, -31.420295], [-64.057383, -31.419463], [-64.057384, -31.426804], [-64.07903340305087, -31.42686918629688], [-64.05745833922134, -31.42681099957368], [-64.05771381438193, -31.43343296114907], [-64.06536855289941, -31.43392972065242], [-64.057617360855, -31.43343394026023], [-64.057384, -31.442331], [-64.072486, -31.450472], [-64.1038357081695, -31.45138010908558], [-64.10383320257954, -31.4416154929854], [-64.10393114447977, -31.45133644673832], [-64.11536, -31.450903], [-64.11805, -31.450068]], [[-64.123494, -31.406669], [-64.124054, -31.410643], [-64.123493, -31.406668], [-64.123494, -31.406669]], [[-64.137525, -31.421071], [-64.137523, -31.421056], [-64.137546, -31.42105], [-64.137525, -31.421071]], [[-64.123291, -31.427552], [-64.12331738253111, -31.434038744877537], [-64.11364578120454, -31.434299088528743], [-64.10866983855418, -31.42730061638409], [-64.08988046539982, -31.427000525772392], [-64.103877, -31.42717], [-64.123291, -31.427552]], [[-64.109611, -31.440961], [-64.10381355618611, -31.440946616717614], [-64.095405, -31.440514], [-64.109611, -31.440961]], [[-64.09537049700351, -31.43440098889661], [-64.06599422569019, -31.433990463465836], [-64.10942263983745, -31.434322636160296], [-64.09537049700351, -31.43440098889661]]], "type": "Polygon"}, "id": "9", "properties": {"Seccional": "5", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 5", "porcentaje": 49.41, "porcentaje_formatted": "49.4%", "total_votos": 53094, "total_votos_formatted": "53,094", "votos": 26233, "votos_formatted": "26,233"}, "type": "Feature"}, {"bbox": [-64.176159, -31.423549, -64.057384, -31.383234], "geometry": {"coordinates": [[[-64.146536, -31.418644], [-64.156668, -31.416357], [-64.159659, -31.4217], [-64.169472, -31.423549], [-64.171883, -31.422391], [-64.173981, -31.423344], [-64.176159, -31.417071], [-64.173388, -31.40884], [-64.154724, -31.403889], [-64.14474, -31.399478], [-64.104667, -31.396344], [-64.057578, -31.383234], [-64.057384, -31.419463], [-64.058523, -31.420104], [-64.074629, -31.416301], [-64.08184, -31.409351], [-64.086184, -31.411765], [-64.090954, -31.409932], [-64.093673, -31.413216], [-64.100104, -31.410206], [-64.104782, -31.411214], [-64.107828, -31.405859], [-64.118192, -31.40576], [-64.121718, -31.403709], [-64.123056, -31.404069], [-64.123268, -31.406539], [-64.128215, -31.40846], [-64.131636, -31.405501], [-64.140888, -31.405297], [-64.143385, -31.417113], [-64.146536, -31.418644]]], "type": "Polygon"}, "id": "10", "properties": {"Seccional": "6", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 6", "porcentaje": 54.95, "porcentaje_formatted": "55.0%", "total_votos": 23791, "total_votos_formatted": "23,791", "votos": 13073, "votos_formatted": "13,073"}, "type": "Feature"}, {"bbox": [-64.220683, -31.405701, -64.175825, -31.308528], "geometry": {"coordinates": [[[-64.175825, -31.405701], [-64.188752, -31.403409], [-64.193364, -31.39889], [-64.189255, -31.375201], [-64.205802, -31.370804], [-64.202594, -31.352199], [-64.207858, -31.343453], [-64.208014, -31.336671], [-64.210532, -31.328511], [-64.220683, -31.308528], [-64.176522, -31.308528], [-64.175825, -31.405701]]], "type": "Polygon"}, "id": "11", "properties": {"Seccional": "7", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 7", "porcentaje": 56.17, "porcentaje_formatted": "56.2%", "total_votos": 50753, "total_votos_formatted": "50,753", "votos": 28509, "votos_formatted": "28,509"}, "type": "Feature"}, {"bbox": [-64.175825, -31.40884, -64.057384, -31.370984], "geometry": {"coordinates": [[[-64.137007, -31.398401], [-64.173388, -31.40884], [-64.175825, -31.405701], [-64.175819, -31.399396], [-64.169942, -31.399353], [-64.126269, -31.387098], [-64.057384, -31.370984], [-64.057578, -31.383234], [-64.104667, -31.396344], [-64.137007, -31.398401]]], "type": "Polygon"}, "id": "12", "properties": {"Seccional": "8", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 8", "porcentaje": 55.6, "porcentaje_formatted": "55.6%", "total_votos": 20672, "total_votos_formatted": "20,672", "votos": 11493, "votos_formatted": "11,493"}, "type": "Feature"}, {"bbox": [-64.232708, -31.406244, -64.182555, -31.354243], "geometry": {"coordinates": [[[-64.191674, -31.401545], [-64.182555, -31.404261], [-64.183027, -31.406244], [-64.193679, -31.406023], [-64.20297, -31.403703], [-64.204312, -31.399723], [-64.202552, -31.39554], [-64.206081, -31.391801], [-64.212994, -31.391539], [-64.219368, -31.395364], [-64.232708, -31.391196], [-64.223348, -31.382735], [-64.218134, -31.354836], [-64.202596, -31.354243], [-64.205802, -31.370804], [-64.189255, -31.375201], [-64.193716, -31.396736], [-64.191674, -31.401545]], [[-64.208342, -31.384738], [-64.209873, -31.384274], [-64.216878, -31.38222499999999], [-64.208342, -31.384738]], [[-64.215861, -31.388753], [-64.214823, -31.389701], [-64.214244, -31.390203], [-64.215861, -31.388753]]], "type": "Polygon"}, "id": "13", "properties": {"Seccional": "9", "agrupacion": "JUNTOS POR EL CAMBIO", "nombre": "Seccional 9", "porcentaje": 61.13, "porcentaje_formatted": "61.1%", "total_votos": 46037, "total_votos_formatted": "46,037", "votos": 28143, "votos_formatted": "28,143"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_c8092f9c111e3563465827b31f3e786f.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nombre", "agrupacion", "votos_formatted", "porcentaje_formatted", "total_votos_formatted"];
+    let aliases = ["Seccional:", "Ganador:", "Votos:", "Porcentaje:", "Total votos:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": false,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_c8092f9c111e3563465827b31f3e786f.addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var marker_c8dd96f590ef9959417c48a4032bc3d6 = L.marker(
+                [-31.416594377926113, -64.18326773859621],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_72408d92ee0b8c9d211ceaae47b508ab = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 1\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_c8dd96f590ef9959417c48a4032bc3d6.setIcon(div_icon_72408d92ee0b8c9d211ceaae47b508ab);
+            
+    
+            var marker_013dd5bb8f3b60b805763ba215311c3c = L.marker(
+                [-31.474956148408232, -64.25628082925337],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_14853b9eeacc2ec51a2a35424fa17193 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 10\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_013dd5bb8f3b60b805763ba215311c3c.setIcon(div_icon_14853b9eeacc2ec51a2a35424fa17193);
+            
+    
+            var marker_7d2d6074b6cf4d78f32f7279ad1f532b = L.marker(
+                [-31.39726224198305, -64.26785940047128],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_3e3d9fd6d8f313066d86583043fa5d2b = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 11\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_7d2d6074b6cf4d78f32f7279ad1f532b.setIcon(div_icon_3e3d9fd6d8f313066d86583043fa5d2b);
+            
+    
+            var marker_986e8e9f88e19de71396896022dd4fc1 = L.marker(
+                [-31.48313297004591, -64.11596163286508],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_2c161d8ea26e7114849701bf27e633fe = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 12\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_986e8e9f88e19de71396896022dd4fc1.setIcon(div_icon_2c161d8ea26e7114849701bf27e633fe);
+            
+    
+            var marker_f1c9b359d56a7237df0f9018c5eb64f6 = L.marker(
+                [-31.347687162411898, -64.12050913347178],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_e238fec4d1b7413352c02fb478b013a9 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 13\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_f1c9b359d56a7237df0f9018c5eb64f6.setIcon(div_icon_e238fec4d1b7413352c02fb478b013a9);
+            
+    
+            var marker_42e4c1980e495866c93e36483f0a78a9 = L.marker(
+                [-31.338351813185607, -64.25412849365492],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_1ad12634b23bf93bd07b8665e37d9417 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 14\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_42e4c1980e495866c93e36483f0a78a9.setIcon(div_icon_1ad12634b23bf93bd07b8665e37d9417);
+            
+    
+            var marker_c0dc5404e8d19fd9cfe347f6821786cc = L.marker(
+                [-31.40867581377524, -64.18040498656644],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_a50cfedd956fcc73f5d0c817efebcd47 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 2\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_c0dc5404e8d19fd9cfe347f6821786cc.setIcon(div_icon_a50cfedd956fcc73f5d0c817efebcd47);
+            
+    
+            var marker_709e52b777e097ea67c98e80fbc1c80f = L.marker(
+                [-31.41035322117308, -64.1988947900733],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_180562806899f6e60bbfa60e7d3adca5 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 3\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_709e52b777e097ea67c98e80fbc1c80f.setIcon(div_icon_180562806899f6e60bbfa60e7d3adca5);
+            
+    
+            var marker_df6089942e8ca4009f7df5f04eec741d = L.marker(
+                [-31.482718813428857, -64.1897226807211],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_fd73247be957d03acfa950a292d3d358 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 4\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_df6089942e8ca4009f7df5f04eec741d.setIcon(div_icon_fd73247be957d03acfa950a292d3d358);
+            
+    
+            var marker_b70f98c90b00a80ced65fc2cdaf92c72 = L.marker(
+                [-31.4284269479421, -64.10408248667811],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_0b9323ca0c8927269ca17f38daa26900 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 5\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_b70f98c90b00a80ced65fc2cdaf92c72.setIcon(div_icon_0b9323ca0c8927269ca17f38daa26900);
+            
+    
+            var marker_e2b2f56a779ac57926909bf1056cab6f = L.marker(
+                [-31.404575337526886, -64.10530316689747],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_bde086fab095172a74dbe5892a7cf2a7 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 6\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_e2b2f56a779ac57926909bf1056cab6f.setIcon(div_icon_bde086fab095172a74dbe5892a7cf2a7);
+            
+    
+            var marker_4153ed14c6784f5fcbf4aecbf1306037 = L.marker(
+                [-31.34761866827454, -64.19122558333703],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_899cc060834ddcb2e8e2b580f6b12761 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 7\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_4153ed14c6784f5fcbf4aecbf1306037.setIcon(div_icon_899cc060834ddcb2e8e2b580f6b12761);
+            
+    
+            var marker_0541b92fc2d8961e93c2802941249242 = L.marker(
+                [-31.389624559102742, -64.11075094772873],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_028840596586aa9c33775bb843682d7f = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 8\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_0541b92fc2d8961e93c2802941249242.setIcon(div_icon_028840596586aa9c33775bb843682d7f);
+            
+    
+            var marker_a17917d99951f01117eef57f3f03e72f = L.marker(
+                [-31.380867453327784, -64.2077438638602],
+                {
+}
+            ).addTo(map_d72b78f64f60447a5301ea2a8972c709);
+        
+    
+            var div_icon_7c0588ecd04f8fdb35229e7007817f69 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-family: Arial, sans-serif;\n                        font-size: 13px;\n                        font-weight: 500;\n                        color: #1a1a1a;\n                        text-align: center;\n                        text-shadow:\n                            -1px -1px 0 #FFF,\n                            1px -1px 0 #FFF,\n                            -1px 1px 0 #FFF,\n                            1px 1px 0 #FFF,\n                            0 0 3px #FFF;\n                        pointer-events: none;\n                    \"\u003e\n                        Seccional 9\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_a17917d99951f01117eef57f3f03e72f.setIcon(div_icon_7c0588ecd04f8fdb35229e7007817f69);
+            
+</script>
+</html>

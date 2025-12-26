@@ -1,0 +1,64 @@
+/* Estilos para mejorar el efecto hover del mapa electoral */
+
+/* Asegurar que el cursor sea pointer sobre el mapa */
+#electoral-map {
+    cursor: default;
+}
+
+#electoral-map .maplibregl-canvas,
+#electoral-map .mapboxgl-canvas,
+#electoral-map canvas {
+    cursor: pointer !important;
+}
+
+/* Mejorar tooltip de Plotly */
+.plotly .hoverlayer .hovertext {
+    background-color: white !important;
+    border: 2px solid #2E86AB !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    color: #333 !important;
+}
+
+/* Mejorar la visualización de los paths SVG si los hay */
+#electoral-map svg path {
+    transition: all 0.2s ease;
+}
+
+#electoral-map svg path:hover {
+    stroke-width: 3px !important;
+    stroke: #1a5276 !important;
+    fill-opacity: 0.85 !important;
+    cursor: pointer !important;
+}
+
+/* Estilos para capas geográficas */
+.geolayer path {
+    transition: stroke-width 0.2s ease, fill-opacity 0.2s ease;
+}
+
+/* Mejorar la apariencia del mapa en general */
+.maplibregl-canvas-container,
+.mapboxgl-canvas-container {
+    cursor: pointer !important;
+}
+
+/* Tooltip personalizado para el mapa */
+.maplibregl-popup-content,
+.mapboxgl-popup-content {
+    background-color: white !important;
+    border: 2px solid #2E86AB !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    padding: 10px !important;
+    font-family: Arial, sans-serif !important;
+}
+
+/* Asegurar que los elementos del mapa sean interactivos */
+.js-plotly-plot .plotly .maplibregl-canvas {
+    cursor: pointer !important;
+}
